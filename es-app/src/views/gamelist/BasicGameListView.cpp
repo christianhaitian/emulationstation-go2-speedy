@@ -249,15 +249,14 @@ std::vector<HelpPrompt> BasicGameListView::getHelpPrompts()
 	std::vector<HelpPrompt> prompts;
 
 	if(Settings::getInstance()->getBool("QuickSystemSelect"))
-		prompts.push_back(HelpPrompt("left/right", "시스템"));
-	prompts.push_back(HelpPrompt("up/down", "이동"));
-	prompts.push_back(HelpPrompt("a", "실행"));
-	prompts.push_back(HelpPrompt("b", "이전"));
-
+		prompts.push_back(HelpPrompt("left/right", "system"));
+	prompts.push_back(HelpPrompt("up/down", "choose"));
+	prompts.push_back(HelpPrompt("a", "launch"));
+	prompts.push_back(HelpPrompt("b", "back"));
 	if(!UIModeController::getInstance()->isUIModeKid())
-		prompts.push_back(HelpPrompt("select", "옵션"));
+		prompts.push_back(HelpPrompt("select", "options"));
 	if(mRoot->getSystem()->isGameSystem())
-		prompts.push_back(HelpPrompt("x", "무작위"));
+		prompts.push_back(HelpPrompt("x", "random"));
 	if(mRoot->getSystem()->isGameSystem() && !UIModeController::getInstance()->isUIModeKid())
 	{
 		std::string prompt = CollectionSystemManager::get()->getEditingCollection();

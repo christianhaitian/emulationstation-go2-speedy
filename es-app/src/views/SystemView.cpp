@@ -256,9 +256,9 @@ void SystemView::onCursorChanged(const CursorState& /*state*/)
 		std::stringstream ss;
 
 		if (!getSelected()->isGameSystem())
-			ss << "설정";
+			ss << "CONFIGURATION";
 		else
-			ss << gameCount << "개의 게임 이용가능";
+			ss << gameCount << " GAMES AVAILABLE";
 
 		mSystemInfo.setText(ss.str());
 	}, false, 1);
@@ -375,14 +375,14 @@ std::vector<HelpPrompt> SystemView::getHelpPrompts()
 {
 	std::vector<HelpPrompt> prompts;
 	if (mCarousel.type == VERTICAL || mCarousel.type == VERTICAL_WHEEL)
-		prompts.push_back(HelpPrompt("up/down", "선택"));
+		prompts.push_back(HelpPrompt("up/down", "choose"));
 	else
-		prompts.push_back(HelpPrompt("left/right", "선택"));
-	prompts.push_back(HelpPrompt("a", "실행"));
-	prompts.push_back(HelpPrompt("x", "무작위"));
+		prompts.push_back(HelpPrompt("left/right", "choose"));
+	prompts.push_back(HelpPrompt("a", "select"));
+	prompts.push_back(HelpPrompt("x", "random"));
 
 	if (!UIModeController::getInstance()->isUIModeKid() && Settings::getInstance()->getBool("ScreenSaverControls"))
-		prompts.push_back(HelpPrompt("select", "스크린세이버 실행"));
+		prompts.push_back(HelpPrompt("select", "launch screensaver"));
 
 	return prompts;
 }

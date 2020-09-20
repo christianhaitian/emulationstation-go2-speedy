@@ -132,7 +132,7 @@ void Font::unloadTextures()
 Font::FontTexture::FontTexture()
 {
 	textureId = 0;
-	textureSize = Vector2i(2048, 1024);
+	textureSize = Vector2i(2048, 512);
 	writePos = Vector2i::Zero();
 	rowHeight = 0;
 }

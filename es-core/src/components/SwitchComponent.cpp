@@ -71,6 +71,6 @@ void SwitchComponent::onStateChanged()
 std::vector<HelpPrompt> SwitchComponent::getHelpPrompts()
 {
 	std::vector<HelpPrompt> prompts;
-	prompts.push_back(HelpPrompt("a", "변경"));
+	prompts.push_back(HelpPrompt("a", "change"));
 	return prompts;
 }

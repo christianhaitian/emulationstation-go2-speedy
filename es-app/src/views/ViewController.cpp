@@ -445,7 +445,10 @@ void ViewController::preload()
 		if (splash)
 		{
 			i++;
-			mWindow->renderLoadingScreen("테마 로딩중...", (float)i / (float)max);
+			char buffer[100];
+			sprintf (buffer, "Loading '%s' (%d/%d)",
+				(*it)->getFullName().c_str(), i, (int)SystemData::sSystemVector.size());
+			mWindow->renderLoadingScreen(std::string(buffer));
 		}
 
 		(*it)->getIndex()->resetFilters();

@@ -32,29 +32,29 @@ DetailedGameListView::DetailedGameListView(Window* window, FileData* root) :
 	addChild(&mImage);
 
 	// metadata labels + values
-	mLblRating.setText("등급: ");
+	mLblRating.setText("Rating: ");
 	addChild(&mLblRating);
 	addChild(&mRating);
-	mLblReleaseDate.setText("발매: ");
+	mLblReleaseDate.setText("Released: ");
 	addChild(&mLblReleaseDate);
 	addChild(&mReleaseDate);
-	mLblDeveloper.setText("개발사: ");
+	mLblDeveloper.setText("Developer: ");
 	addChild(&mLblDeveloper);
 	addChild(&mDeveloper);
-	mLblPublisher.setText("판매사: ");
+	mLblPublisher.setText("Publisher: ");
 	addChild(&mLblPublisher);
 	addChild(&mPublisher);
-	mLblGenre.setText("장르: ");
+	mLblGenre.setText("Genre: ");
 	addChild(&mLblGenre);
 	addChild(&mGenre);
-	mLblPlayers.setText("플레이어: ");
+	mLblPlayers.setText("Players: ");
 	addChild(&mLblPlayers);
 	addChild(&mPlayers);
-	mLblLastPlayed.setText("최근 실행: ");
+	mLblLastPlayed.setText("Last played: ");
 	addChild(&mLblLastPlayed);
 	mLastPlayed.setDisplayRelative(true);
 	addChild(&mLastPlayed);
-	mLblPlayCount.setText("실행 횟수: ");
+	mLblPlayCount.setText("Times played: ");
 	addChild(&mLblPlayCount);
 	addChild(&mPlayCount);
 

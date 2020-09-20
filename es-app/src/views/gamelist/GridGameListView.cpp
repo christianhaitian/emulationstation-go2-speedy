@@ -29,29 +29,29 @@ GridGameListView::GridGameListView(Window* window, FileData* root) :
 	populateList(root->getChildrenListToDisplay());
 
 	// metadata labels + values
-	mLblRating.setText("등급: ");
+	mLblRating.setText("Rating: ");
 	addChild(&mLblRating);
 	addChild(&mRating);
-	mLblReleaseDate.setText("발매: ");
+	mLblReleaseDate.setText("Released: ");
 	addChild(&mLblReleaseDate);
 	addChild(&mReleaseDate);
-	mLblDeveloper.setText("개발사: ");
+	mLblDeveloper.setText("Developer: ");
 	addChild(&mLblDeveloper);
 	addChild(&mDeveloper);
-	mLblPublisher.setText("판매사: ");
+	mLblPublisher.setText("Publisher: ");
 	addChild(&mLblPublisher);
 	addChild(&mPublisher);
-	mLblGenre.setText("장르: ");
+	mLblGenre.setText("Genre: ");
 	addChild(&mLblGenre);
 	addChild(&mGenre);
-	mLblPlayers.setText("플레이어: ");
+	mLblPlayers.setText("Players: ");
 	addChild(&mLblPlayers);
 	addChild(&mPlayers);
-	mLblLastPlayed.setText("최근 실행: ");
+	mLblLastPlayed.setText("Last played: ");
 	addChild(&mLblLastPlayed);
 	mLastPlayed.setDisplayRelative(true);
 	addChild(&mLastPlayed);
-	mLblPlayCount.setText("실행 횟수: ");
+	mLblPlayCount.setText("Times played: ");
 	addChild(&mLblPlayCount);
 	addChild(&mPlayCount);
 
@@ -376,15 +376,14 @@ std::vector<HelpPrompt> GridGameListView::getHelpPrompts()
 	std::vector<HelpPrompt> prompts;
 
 	if(Settings::getInstance()->getBool("QuickSystemSelect"))
-		prompts.push_back(HelpPrompt("lr", "시스템"));
-	prompts.push_back(HelpPrompt("up/down/left/right", "이동"));
-	prompts.push_back(HelpPrompt("a", "실행"));
-	prompts.push_back(HelpPrompt("b", "이전"));
-
+		prompts.push_back(HelpPrompt("lr", "system"));
+	prompts.push_back(HelpPrompt("up/down/left/right", "choose"));
+	prompts.push_back(HelpPrompt("a", "launch"));
+	prompts.push_back(HelpPrompt("b", "back"));
 	if(!UIModeController::getInstance()->isUIModeKid())
-		prompts.push_back(HelpPrompt("select", "옵션"));
+		prompts.push_back(HelpPrompt("select", "options"));
 	if(mRoot->getSystem()->isGameSystem())
-		prompts.push_back(HelpPrompt("x", "무작위"));
+		prompts.push_back(HelpPrompt("x", "random"));
 	if(mRoot->getSystem()->isGameSystem() && !UIModeController::getInstance()->isUIModeKid())
 	{
 		std::string prompt = CollectionSystemManager::get()->getEditingCollection();

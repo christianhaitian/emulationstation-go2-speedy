@@ -87,11 +87,11 @@ private:
 				mMenu.addRow(row, (!mParent->mMultiSelect && it->selected));
 			}
 
-			mMenu.addButton("뒤로", "적용", [this] { delete this; });
+			mMenu.addButton("BACK", "accept", [this] { delete this; });
 
 			if(mParent->mMultiSelect)
 			{
-				mMenu.addButton("모두 선택", "모두 선택", [this, checkboxes] {
+				mMenu.addButton("SELECT ALL", "select all", [this, checkboxes] {
 					for(unsigned int i = 0; i < mParent->mEntries.size(); i++)
 					{
 						mParent->mEntries.at(i).selected = true;
@@ -100,7 +100,7 @@ private:
 					mParent->onSelectedChanged();
 				});
 
-				mMenu.addButton("선택 취소", "선택 취소", [this, checkboxes] {
+				mMenu.addButton("SELECT NONE", "select none", [this, checkboxes] {
 					for(unsigned int i = 0; i < mParent->mEntries.size(); i++)
 					{
 						mParent->mEntries.at(i).selected = false;
@@ -128,8 +128,7 @@ private:
 		std::vector<HelpPrompt> getHelpPrompts() override
 		{
 			auto prompts = mMenu.getHelpPrompts();
-			prompts.push_back(HelpPrompt("b", "이전"));
-
+			prompts.push_back(HelpPrompt("b", "back"));
 			return prompts;
 		}
 	};
@@ -294,7 +293,7 @@ private:
 		{
 			// display # selected
 			std::stringstream ss;
-			ss << getSelectedObjects().size() << " 선택됨";
+			ss << getSelectedObjects().size() << " SELECTED";
 			mText.setText(ss.str());
 			mText.setSize(0, mText.getSize().y());
 			setSize(mText.getSize().x() + mRightArrow.getSize().x() + 24, mText.getSize().y());
@@ -321,9 +320,9 @@ private:
 	{
 		std::vector<HelpPrompt> prompts;
 		if(!mMultiSelect)
-			prompts.push_back(HelpPrompt("left/right", "변경"));
+			prompts.push_back(HelpPrompt("left/right", "change"));
 
-		prompts.push_back(HelpPrompt("a", "선택"));
+		prompts.push_back(HelpPrompt("a", "select"));
 		return prompts;
 	}
 
