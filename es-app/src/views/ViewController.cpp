@@ -68,7 +68,7 @@ void ViewController::goToStart()
 
 void ViewController::ReloadAndGoToStart()
 {
-	mWindow->renderLoadingScreen("불러오는 중...");
+	mWindow->renderLoadingScreen("Loading...");
 	ViewController::get()->reloadAll();
 	ViewController::get()->goToStart();
 }
@@ -553,7 +553,7 @@ std::vector<HelpPrompt> ViewController::getHelpPrompts()
 
 	prompts = mCurrentView->getHelpPrompts();
 	if(!UIModeController::getInstance()->isUIModeKid())
-		prompts.push_back(HelpPrompt("start", "메뉴"));
+		prompts.push_back(HelpPrompt("start", "menu"));
 
 	return prompts;
 }
