@@ -81,10 +81,7 @@ const std::string FileData::getThumbnailPath() const
 
 const bool FileData::getFavorite()
 {
-	if(mType != FOLDER)
-		return metadata.get("favorite")  == "true";
-	else
-		return false;
+	return metadata.get("favorite")  == "true";
 }
 
 const std::string& FileData::getName()
