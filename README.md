@@ -29,13 +29,13 @@ sudo dnf install SDL2-devel freeimage-devel freetype-devel curl-devel \
 Note this Repository uses a git submodule - to checkout the source and all submodules, use
 
 ```bash
-git clone --recursive https://github.com/sana2dang/emulationstation-go2-kor.git
+git clone --recursive https://github.com/christianhaitian/emulationstation-go2-speedy.git
 ```
 
 or 
 
 ```bash
-git clone https://github.com/sana2dang/emulationstation-go2-kor.git
+git clone https://github.com/christianhaitian/emulationstation-go2-speedy.git
 cd EmulationStation
 git submodule update --init
 ```
